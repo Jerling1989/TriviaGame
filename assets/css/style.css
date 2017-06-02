@@ -1,0 +1,101 @@
+
+body {
+	text-align: center;
+	background: url(../images/marvel_bg.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: fixed;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+p {
+	font-family: 'Prompt', sans-serif;
+}
+
+h1 {
+	font-size: 60px;
+	line-height: 20px
+}
+
+h2 {
+	display: inline;
+	position: absolute;
+	line-height: 60px;
+	font-size: 50px;
+	font-weight: bolder;
+}
+
+h3 {
+	font-size: 40px;
+	line-height: 20px;
+}
+
+
+
+img {
+	width: 12%
+}
+
+.main {
+	text-align: center;
+	margin-left: 9.45%;
+	margin-right: 11.66%;
+	margin-top: 12.7%;
+	background-color: white;
+	position: fixed;
+	width: 79.99%;
+	height: 80%;
+}
+
+#banner {
+	text-align: center;
+	display: block;
+	position: absolute;
+
+}
+
+#time-bomb {
+	display: inline;
+	position: relative;
+}
+
+#content {
+	text-align: center;
+	display: block;
+}
+
+.button {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+h4 {
+	background-color: #F11E22;
+	color: white;
+	font-size: 30px;
+	line-height: 30px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+
+}
+
+h4:hover {
+	background-color: #8B0000;
+}
+
+h4:active {
+	background-color: #000000;
+}
+
+h4:visited {
+	background-color: #000000;
+}
+
+
+
