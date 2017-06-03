@@ -1,0 +1,13 @@
+Create variable to hold the amount of correct guesses
+
+Create functions to store each slide in
+-- Create functions to store each question slide
+-- Create functions to store each answer slide
+
+Create countdown function to run in each slide
+-- 30 seconds for question slide
+-- 5 seconds for answer slide
+
+Create functions to go to next slide
+-- If the user guesses
+-- If time runs out

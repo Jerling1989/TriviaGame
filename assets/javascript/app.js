@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-var number = 30;
+var number = 31;
 var intervalId;
 
 
@@ -9,27 +9,17 @@ function run() {
 	intervalId = setInterval(decrement, 1000);
 }
 
-//  The decrement function.
 function decrement() {
-
-	//  Decrease number by one.
 	number--;
-
-	//  Show the number in the #show-number tag.
 	$("#timer").html("<h2>-" + number + "</h2>");
-
-
-	//  Once number hits zero...
 	if (number === 0) {
-
-	//  ...run the stop function.
+	answerOneCorrect();
 	stop();
-
 	}
 }
 
-function stop() {
 
+function stop() {
   //  Clears our intervalId
   //  We just pass the name of the interval
   //  to the clearInterval function.
@@ -41,7 +31,41 @@ function stop() {
 
 }
 
-run();
+
+$('#start-game').click(questionOne);
+
+
+function questionOne() {
+	run();
+	$('.temp').remove();
+	$('#time-bomb').append('<span id="timer"></span>');
+	$('#content').append('<h3 class="temp">What Movie Launched The Marvel Cinematic Universe?</h3>');
+	$('#content').append('<h4 class="temp" id="wrong">THE INCREDIBLE HULK</h4>');
+	$('#content').append('<h4 class="temp" id="correct">IRONMAN</h4>');
+	$('#content').append('<h4 class="temp" id="wrong">THOR</h4>');
+	$('#content').append('<h4 class="temp" id="wrong">X-MEN</h4>');
+
+	$('#correct').click(answerOneCorrect);
+
+}
+
+function answerOneCorrect() {
+	$('.temp').remove();
+	stop();
+	$('#content').append('<h3 class="temp">CORRECT! IRONMAN</h3>');
+	$('#content').append('<iframe src="https://giphy.com/embed/qmfpjpAT2fJRK" width="480" height="366" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 });
