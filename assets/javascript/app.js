@@ -5,6 +5,7 @@ var number = 31;
 var intervalId;
 var correctAnswers = 0;
 var wrongAnswers = 0;
+var timedOut = 0;
 
 
 function run() {
@@ -49,6 +50,10 @@ function questionOne() {
 	$('#wrong1,#wrong2,#wrong3').click(answerOneWrong);
 	$('#correct').click(answerOneCorrect);
 
+	if (number === 0) {
+		answerOneTimedOut();
+	}
+
 
 }
 
@@ -57,7 +62,7 @@ function answerOneCorrect() {
 	$('.temp').remove();
 	stop();
 	$('#content').append('<h3 class="temp">CORRECT! IRONMAN</h3>');
-	$('#content').append('<iframe src="https://giphy.com/embed/qmfpjpAT2fJRK" width="480" height="366" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
+	$('#content').append('<iframe src="https://giphy.com/embed/qmfpjpAT2fJRK" width="480" height="290" frameBorder="0" class="giphy-embed"></iframe>');
 
 }
 
@@ -66,6 +71,15 @@ function answerOneWrong() {
 	$('.temp').remove();
 	stop();
 	$('#content').append('<h3 class="temp">WRONG! IRONMAN</h3>');
+	$('#content').append('<iframe src="https://giphy.com/embed/qmfpjpAT2fJRK" width="480" height="366" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
+
+}
+
+function answerOneTimedOut() {
+	timedOut++;
+	$('.temp').remove();
+	stop();
+	$('#content').append('<h3 class="temp">YOU TOOK TOO LONG! IRONMAN</h3>');
 	$('#content').append('<iframe src="https://giphy.com/embed/qmfpjpAT2fJRK" width="480" height="366" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
 
 }
