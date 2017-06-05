@@ -28,6 +28,7 @@ $('#start-game').click(function(event) {
 // Brings User Back to the Start Screen for New Game
 $('#reset-game').click(function(event) {
 	resetGame();
+	startScreen();
 });
 
 // Checks if User Guess is Correct
@@ -78,6 +79,7 @@ function questionDisplay() {
 // Displays if User Guesses Correctly
 function correctDisplay() {
 	correctAnswers++;
+	totalScore = correctAnswers * 10;
 	$('#content').html('');
 	$('#content').append('<h3 class="temp">CORRECT! ' + correctArray[i] + '</h3>');
 	$('#content').append('<iframe src=' + gifArray[i] + '></iframe>');
@@ -135,7 +137,6 @@ function resetGame() {
     wrongAnswers = 0;
     timedOut = 0;
     counter = 30;
-    startScreen();
 }
 
 
