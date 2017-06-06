@@ -6,7 +6,7 @@ var answerArray = [['THE INCREDIBLE HULK', 'IRONMAN', 'THOR', 'X-MEN'], ['ZEUS',
 var correctArray = ['IRONMAN', 'LOKI', 'TOM HOLLAND', 'STAR-LORD', 'BURGLAR', 'SIX', 'BUCKY BARNES', 'WE ARE GROOT', 'BENEDICT CUMBERBATCH', 'PHASE THREE'];
 var gifArray = ['"https://giphy.com/embed/qmfpjpAT2fJRK" width="480" height="300" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/KiaAwaemKWhVu" width="480" height="259" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/I2LasqroRY8Mg" width="480" height="270" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/QgCwRigEAxqGQ" width="480" height="294" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/h0gzUb0Wh1RIY" width="480" height="300" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/aqMY57vLdkghi" width="480" height="198" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/oyyXEHFEZPLCo" width="480" height="274" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/F9hQLAVhWnL56" width="480" height="300" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/dvWvnRdc4h440" width="480" height="270" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/RjSRwCJRhRB9S" width="480" height="300" frameBorder="0" class="giphy-embed"'];
 
-var totalScore;
+var totalScore = 0;
 var correctAnswers = 0;
 var wrongAnswers = 0;
 var answer;
@@ -136,6 +136,7 @@ function resetGame() {
     i = 0;
     correctAnswers = 0;
     wrongAnswers = 0;
+    totalScore = 0;
     timedOut = 0;
     counter = 30;
     questionDisplay();
