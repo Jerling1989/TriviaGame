@@ -25,11 +25,10 @@ $('#start-game').click(function(event) {
 	countdown();
 });
 
-// Brings User Back to the Start Screen for New Game
-$('#reset-game').click(function(event) {
+// Brings User Back to the Beginning of the Game
+$("body").on("click", "#reset-game", function(event){       
 	resetGame();
-	startScreen();
-});
+}); 
 
 // Checks if User Guess is Correct
 $("body").on("click", ".answer", function(event){
@@ -112,7 +111,7 @@ function nextDisplay() {
 		countdown();
 		counter = 30;
 	} else {
-		endScreen();
+		setTimeout(endScreen, 10900);
 	}
 
 }
@@ -137,6 +136,8 @@ function resetGame() {
     wrongAnswers = 0;
     timedOut = 0;
     counter = 30;
+    questionDisplay();
+    countdown();
 }
 
 
