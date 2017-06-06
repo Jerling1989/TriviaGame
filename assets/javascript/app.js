@@ -46,6 +46,7 @@ $("body").on("click", ".answer", function(event){
 // Start Screen of Game
 function startScreen() {
 	$('#content').html('');
+	$('#time-bomb').html('<img src="assets/images/timer.jpg">');
 	$('#content').append('<h3>Play The Marvel Cinematic Universe (MCU) Trivia Game!</h3>');
 	$('#content').append('<h5>There Are 10 Questions in the Game.</h5>');
 	$('#content').append('<h5>You Will Have 30 Seconds to Answer Each Question.</h5>');
@@ -66,6 +67,8 @@ function endScreen() {
 // Displays the Questions to the User
 function questionDisplay() {
 	$('#content').html('');
+	$('#time-bomb').html();
+	$('#time-bomb').html('<img src="assets/images/timer.jpg">');
 	$('#time-bomb').append('<span id="timer"></span>');
 	$('#content').append('<h3 class="question">' + questions[i] + '</h3>');
 	$('#content').append('<h4 class="answer">' + answerArray[i][0] + '</h4>');

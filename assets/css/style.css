@@ -65,7 +65,7 @@ img {
 }
 
 #time-bomb {
-	display: inline;
+	display: inline-block;
 	position: relative;
 }
 
