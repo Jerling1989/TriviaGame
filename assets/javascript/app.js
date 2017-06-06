@@ -9,7 +9,6 @@ var gifArray = ['"https://giphy.com/embed/qmfpjpAT2fJRK" width="480" height="300
 var totalScore;
 var correctAnswers = 0;
 var wrongAnswers = 0;
-var timedOut = 0;
 var answer;
 var i = 0;
 
@@ -57,10 +56,10 @@ function startScreen() {
 // End Screen of Game
 function endScreen() {
 	$('#content').html('');
-	$('#content').append('<h3>GAME OVER</h3>');
+	$('#content').append('<h3>GAME OVER!</h3>');
 	$('#content').append('<h5>Correct: ' + correctAnswers + '</h5>');
 	$('#content').append('<h5>Incorrect: ' + wrongAnswers + '</h5>');
-	$('#content').append('<h5>Total Score: ' + totalScore + '</h5>');
+	$('#content').append('<h5>Total Score: ' + totalScore + '%</h5>');
 	$('#content').append('<h4 id="reset-game">PLAY AGAIN</h4>');
 }
 
@@ -96,7 +95,7 @@ function wrongDisplay() {
 
 // Displays if User Runs Out of Time
 function timedOutDisplay() {
-	timedOut++;
+	wrongAnswers++;
 	$('#content').html('');
 	$('#content').append('<h3 class="temp">TIMES UP! ' + correctArray[i] + '</h3>');
 	$('#content').append('<iframe src=' + gifArray[i] + '></iframe>');
