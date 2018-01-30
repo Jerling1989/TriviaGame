@@ -3,6 +3,7 @@ This game is a fun project I made for anyone who is a fan of the Marvel Cinemati
 
 ---
 
+- This is an image of the Start Screen for the game. The user will see the Game Title and Rules with a Button to start. They will also see a cool border of various Marvel Superheroes.
 ![START SCREEN](assets/images/read_me/start-screen.png)
 
 ![QUESTION](assets/images/read_me/question.png)
