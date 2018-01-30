@@ -9,10 +9,14 @@ This game is a fun project I made for anyone who is a fan of the Marvel Cinemati
 - Here is an example of one of the questions. As you can see there are four answers and a timer counting down the time left for the User to answer and score points.
 ![QUESTION](assets/images/read_me/question.png)
 
+- This is a typical display the user will see when they answer a question correctly.
 ![CORRECT](assets/images/read_me/correct.png)
 
+- This is a typical display the user will see when they answer a question incorrectly.
 ![INCORRECT](assets/images/read_me/incorrect.png)
 
+- This is a typical display the user will see when they do not answer a question in the alotted time.
 ![TIMES UP](assets/images/read_me/times-up.png)
+
 
 ![END SCREEN](assets/images/read_me/end-screen.png)
