@@ -1,35 +1,38 @@
+// LAUNCH SCRIPT ONCE PAGE LOADS
 $(document).ready(function() {
 
-
+// ARRAYS FOR THE GAME CONTENT
 var questions = ['What Movie Launched The Marvel Cinematic Universe?', 'What is the Name of Thor&rsquo;s Brother?', 'Who is the First Actor to Play Spiderman in the MCU?', 'What is Peter Quill&rsquo;s Self-Appointed Nickname?', 'What Was Ant-Man&rsquo;s Previous Career?', 'How Many Infinity Stones are in the MCU?', 'What is the Winter Soldier&rsquo;s Name?', 'What are the Only Words Groot Said Besides <q>I Am Groot</q>?', 'What Actor Played Doctor Strange?', 'What Phase is the MCU Currently In?'];
 var answerArray = [['THE INCREDIBLE HULK', 'IRONMAN', 'THOR', 'X-MEN'], ['ZEUS', 'APOLLO', 'JEFF', 'LOKI'], ['TOM HOLLAND', 'ANDREW GARFIELD', 'TOBEY MAGUIRE', 'NEIL PATRICK HARRIS'], ['MOON-GOD', 'SPACE-JESUS', 'STAR-LORD', 'LORD-BYRON'], ['CON-ARTIST', 'JEWELER', 'PLUMBER', 'BURGLAR'], ['SIX', 'THREE', 'FIVE', 'TEN'], ['FRANK WATTS', 'BUCKY BARNES', 'FATTY ARBUCKLE', 'NICKY BARNES'], ['WE ARE GROOT', 'I AM HUNGRY', 'I LOVE YOU', 'I LIKE TURTLES'], ['BUTTERCUP PUMPKINPATCH', 'BUFFALO CUSTARDBATH', 'BENEDICT CUMBERBATCH', 'BENEDRYL CUMBERSNATCH'], ['PHASE ONE', 'PHASE TWO', 'PHASE THREE', 'PHASE FOUR']];
 var correctArray = ['IRONMAN', 'LOKI', 'TOM HOLLAND', 'STAR-LORD', 'BURGLAR', 'SIX', 'BUCKY BARNES', 'WE ARE GROOT', 'BENEDICT CUMBERBATCH', 'PHASE THREE'];
 var gifArray = ['"https://giphy.com/embed/qmfpjpAT2fJRK" width="480" height="300" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/KiaAwaemKWhVu" width="480" height="259" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/I2LasqroRY8Mg" width="480" height="270" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/QgCwRigEAxqGQ" width="480" height="294" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/h0gzUb0Wh1RIY" width="480" height="300" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/aqMY57vLdkghi" width="480" height="198" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/oyyXEHFEZPLCo" width="480" height="274" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/F9hQLAVhWnL56" width="480" height="300" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/dvWvnRdc4h440" width="480" height="270" frameBorder="0" class="giphy-embed"', '"https://giphy.com/embed/RjSRwCJRhRB9S" width="480" height="300" frameBorder="0" class="giphy-embed"'];
 
+// VARIABLES FOR SCORE COUNT
 var totalScore = 0;
 var correctAnswers = 0;
 var wrongAnswers = 0;
 var answer;
 var i = 0;
 
+// VARIABLES FOR GAME TIMER
 var counter = 30;
 var intervalId;
 
-// Displays Start Screen
+// CALLS FUNCTION TO DISPLAY GAME START SCREEN
 startScreen();
 
-// Begins When User Presses 'START GAME'
+// CALLS GAME FUNCTION WHEN USER CLICKS 'START GAME'
 $('#start-game').click(function(event) {
 	questionDisplay();
 	countdown();
 });
 
-// Brings User Back to the Beginning of the Game
+// BRINGS USER BACK TO THE BEGINNING OF THE GAME
 $("body").on("click", "#reset-game", function(event){       
 	resetGame();
 }); 
 
-// Checks if User Guess is Correct
+// CHECKS IF USER GUESS IS THE CORRECT ANSWER
 $("body").on("click", ".answer", function(event){
     answer = $(this).text();
     if(answer === correctArray[i]) {
@@ -43,7 +46,7 @@ $("body").on("click", ".answer", function(event){
 }); 
 
 
-// Start Screen of Game
+// FUNCTION FOR THE START SCREEN OF THE GAME
 function startScreen() {
 	$('#content').html('');
 	$('#time-bomb').html('<img src="assets/images/timer.jpg">');
@@ -54,7 +57,7 @@ function startScreen() {
 	$('#content').append('<h4 id="start-game">START GAME</h4>');
 }
 
-// End Screen of Game
+// FUNCTION FOR THE END SCREEN OF THE GAME
 function endScreen() {
 	$('#content').html('');
 	$('#content').append('<h3>GAME OVER!</h3>');
@@ -64,7 +67,7 @@ function endScreen() {
 	$('#content').append('<h4 id="reset-game">PLAY AGAIN</h4>');
 }
 
-// Displays the Questions to the User
+// DISPLAYS THE QUESTIONS TO THE USER
 function questionDisplay() {
 	$('#content').html('');
 	$('#time-bomb').html();
@@ -77,7 +80,7 @@ function questionDisplay() {
 	$('#content').append('<h4 class="answer">' + answerArray[i][3] + '</h4>');
 }
 
-// Displays if User Guesses Correctly
+// DISPLAYS IF USER ANSWERS QUESTION CORRECTLY
 function correctDisplay() {
 	correctAnswers++;
 	totalScore = correctAnswers * 10;
@@ -87,7 +90,7 @@ function correctDisplay() {
 	setTimeout(nextDisplay, 4000);
 }
 
-// Displays if User Guesses Incorrectly
+// DISPLAYS IF USER ANSWERS QUESTION INCORRECTLY
 function wrongDisplay() {
 	wrongAnswers++;
 	$('#content').html('');
@@ -96,7 +99,7 @@ function wrongDisplay() {
 	setTimeout(nextDisplay, 4000);
 }
 
-// Displays if User Runs Out of Time
+// DISPLAYS IF USER RUNS OUT OF TIME
 function timedOutDisplay() {
 	wrongAnswers++;
 	$('#content').html('');
@@ -105,7 +108,8 @@ function timedOutDisplay() {
 	setTimeout(nextDisplay, 4000);
 }
 
-// Brings on the Next Question Display and Resets Counter Time 
+// BRINGS ON THE NEXT QUESTION DISPLAY
+// AND RESETS THE COUNTER TIME
 function nextDisplay() {
 	if (i < 9) {
 		i++;
@@ -118,7 +122,7 @@ function nextDisplay() {
 
 }
 
-// Timer Function For Each Question (30sec)
+// TIMER FUNCTION FOR EACH QUESTION (30sec)
 function countdown() {
 	intervalId = setInterval(decrement, 1000);
 	function decrement() {
@@ -131,7 +135,7 @@ function countdown() {
 	}
 }
 
-// Resets the Game Variables and Returns User to Start Screen
+// RESETS THE GAME VARIABLES AND RETURNS USER TO THE START SCREEN
 function resetGame() {
     i = 0;
     correctAnswers = 0;
@@ -142,8 +146,6 @@ function resetGame() {
     questionDisplay();
     countdown();
 }
-
-
 
 
 });
