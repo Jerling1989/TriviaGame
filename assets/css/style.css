@@ -1,25 +1,16 @@
-
+/* GENERAL STYLES */
 body {
 	text-align: center;
 	background: url(../images/marvel_bg.jpg);
 	background-position: center top;
 	background-repeat: repeat-y;
 	background-size: 100%;
-}
-
-h1, 
-h2, 
-h3, 
-h4, 
-h5,
-h6,
-p {
 	font-family: 'Prompt', sans-serif;
 }
 
 h1 {
 	font-size: 60px;
-	line-height: 20px
+	line-height: 20px;
 }
 
 h2 {
@@ -40,11 +31,11 @@ h5 {
 	line-height: 10px;
 }
 
-
 img {
-	width: 12%
+	width: 12%;
 }
 
+/* LAYOUT AND DESIGN STYLES */
 #main {
 	text-align: center;
 	background-color: white;
@@ -81,6 +72,7 @@ img {
 	margin-right: 10%;
 }
 
+/* GAME BUTTON STYLES */
 h4 {
 	background-color: #F11E22;
 	color: white;
@@ -91,7 +83,7 @@ h4 {
 	border-width: 2px;
 	width: 80%;
 	margin-left: 10%;
-	margin-right: 10%
+	margin-right: 10%;
 
 }
 
@@ -108,52 +100,100 @@ h4:visited {
 }
 
 
-
+/* SMALLER SCREENS LAPTOPS */
 @media screen and (max-width: 1200px) {
 
-	h5 {
+	h1 {
+	font-size: 50px;
+	line-height: 50px;
+	}
+
+	h2 {
+		display: inline;
+		position: absolute;
+		line-height: 50px;
+		font-size: 40px;
+		font-weight: bolder;
+	}
+
+	h3 {
 	font-size: 35px;
 	line-height: 35px;
 	}
 
+	h5 {
+	font-size: 30px;
+	line-height: 30px;
+	}
 
 	img {
-		width: 12%
+		width: 15%;
 	}
 
-	#main {
-		text-align: center;
-		background-color: white;
-		display: block;
+}
+
+
+/* TABLETS PORTRAIT AND LANDSCAPE */
+@media only screen and (max-device-width : 1024px) {
+
+	h1 {
+	font-size: 40px;
+	line-height: 40px;
+	}
+
+	h2 {
+		display: inline;
 		position: absolute;
-		margin-right: 10%;
-		margin-left: 9.5%;
-		margin-top: 12.8%;
-		height: auto;
+		line-height: 40px;
+		font-size: 30px;
+		font-weight: bolder;
 	}
 
-	#banner {
-		text-align: center;
+	h3 {
+	font-size: 30px;
+	line-height: 30px;
+	}
+
+	h5 {
+	font-size: 25px;
+	line-height: 25px;
+	}
+
+	img {
+		width: 20%;
+	}
+
+}
+
+
+/* PHONES PORTRAIT AND LANDSCAPE */
+@media only screen and (max-device-width : 480px) {
+
+	h1 {
+	font-size: 35px;
+	line-height: 35px
+	}
+
+	h2 {
 		display: inline;
-		position: relative;
-
+		position: absolute;
+		line-height: 35px;
+		font-size: 25px;
+		font-weight: bolder;
 	}
 
-	#time-bomb {
-		display: inline;
-		position: relative;
+	h3 {
+	font-size: 25px;
+	line-height: 25px;
 	}
 
-	#content {
-		text-align: center;
-		display: inline;
-		position: relative;
+	h5 {
+	font-size: 20px;
+	line-height: 20px;
 	}
 
-	.button {
-		width: 80%;
-		margin-left: 10%;
-		margin-right: 10%;
+	img {
+		width: 20%
 	}
 
 }
