@@ -72,6 +72,11 @@ img {
 	margin-right: 10%;
 }
 
+.answer-img {
+	width: 40%;
+	height: auto;
+}
+
 /* GAME BUTTON STYLES */
 h4 {
 	background-color: #F11E22;
