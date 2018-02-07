@@ -1,0 +1,28 @@
+h1 {
+	font-size: 50px;
+	line-height: 50px;
+}
+
+h2 {
+	line-height: 50px;
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 35px;
+	line-height: 35px;
+}
+
+h5 {
+	font-size: 30px;
+	line-height: 30px;
+}
+
+img {
+	width: 15%;
+}
+
+.answer-img {
+	width: 40%;
+	height: auto;
+}
